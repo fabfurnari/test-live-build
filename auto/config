@@ -1,0 +1,15 @@
+#!/bin/sh
+
+export http_proxy='http://localhost:3142'
+export https_proxy='http://localhost:3142'
+lb config \
+   --clean \
+   --memtest none \
+   --distribution wheezy \
+   --debian-installer live \
+   --firmware-binary true \
+   --firmware-chroot true \
+   --apt-ftp-proxy 'http://localhost:3142/' \
+   --apt-http-proxy 'http://localhost:3142/' \
+   ${@}
+
