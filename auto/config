@@ -1,8 +1,8 @@
 #!/bin/sh
 
-export http_proxy='http://localhost:3142'
-export https_proxy='http://localhost:3142'
-lb config \
+set -e
+
+lb config noauto \
    --clean \
    --memtest none \
    --distribution wheezy \
